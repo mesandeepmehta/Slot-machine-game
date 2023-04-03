@@ -1,6 +1,8 @@
+// this is what we need to do to create a game
+
 // 1. Deposit some money
 // 2. Collect a bet amount
-// 3. Determine Number of lines
+// 3. Determine Number of lines to bet on
 // 4. Spin the slot machine
 // 5. check if the user won
 // 6. Give the user their money
@@ -85,7 +87,7 @@ const spin = () => {
             symbols.push(symbol)
         }
     }
-    const reels = [];
+    const reels = [];                      //'reels' is the array of arrays that we need to output
     for (let i=0; i < COLS; i++){
         reels.push([])
             const reelSymbol = [...symbols];
@@ -98,6 +100,8 @@ const spin = () => {
     }
     return reels
 }
+
+// to create a transpose of a matrix.
 
 const transpose = (reels) => {
     const rows=[];
@@ -145,6 +149,8 @@ const getWinnings = (rows, bet, lines) => {
     return winnings;
 }
 
+
+// to start the game
 const game = () => {
     let balance = deposit();
     while (true){
